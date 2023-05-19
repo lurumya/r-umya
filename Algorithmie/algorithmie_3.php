@@ -11,4 +11,5 @@ function ftCheckEvenNumber($nbr) : ?bool {
     return null;
 }
 
-var_dump(ftCheckEvenNumber(45));
+//ftCheckEvenNumber(45);
+var_dump(ftCheckEvenNumber(-43));
