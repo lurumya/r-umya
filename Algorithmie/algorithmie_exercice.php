@@ -12,14 +12,6 @@
 // WWMMWWCCC
 // Production attendue:
 // 4W3C2M
-/*
-function ft_strlen($str) : int {
-    $i = 0;
-    while ($str[$i] !== "\0") // ???
-        $i++;
-    return $i;
-}
-*/
 
 function RegisterVisitorsNumber(string $human) : null {
     if ($human === "") {
@@ -33,7 +25,7 @@ function RegisterVisitorsNumber(string $human) : null {
     $womanNbr = 0;
     while ($i < $size) {
         if ($human[$i] !== "C" && $human[$i] !== "M" && $human[$i] !== "W") {
-            echo "Erreur !\nVous ne pouvez qu'utiliser les lettre majuscules C, M ou W et sans espace !\n";
+            echo "Erreur !\nVous ne pouvez qu'utiliser les lettres majuscules C, M ou W et sans espace !\n";
             return null;
         }
         if ($human[$i] === "C")
@@ -45,13 +37,31 @@ function RegisterVisitorsNumber(string $human) : null {
         $i++;
     }
 
-    if ($childNbr > $manNbr && $childNbr > $womanmanNbr)
+    $child = $childNbr . "C";
+    $man = $manNbr . "M";
+    $woman = $womanNbr . "W";
 
+    if ($womanNbr < $childNbr && $womanNbr > $manNbr)
+        $finalStr = $child . $man . $woman;
+    elseif ($manNbr < $childNbr && $manNbr > $womanNbr)
+        $finalStr = $child . $man . $woman;
+    elseif ($childNbr < $womanNbr && $childNbr > $manNbr)
+        $finalStr = $woman . $child . $man;
+    elseif ($manNbr < $womanNbr && $manNbr > $childNbr)
+        $finalStr = $woman . $man . $child;
+    elseif ($childNbr < $manNbr && $childNbr > $womanNbr)
+        $finalStr = $man . $child . $woman;
+    elseif ($womanNbr < $manNbr && $womanNbr > $childNbr)
+        $finalStr = $man . $woman . $child;
 
-    echo "child = " . $childNbr . " | man = " . $manNbr . " | woman = " . $womanNbr . "\n";
-    echo $woman . "W" . $child . "C" . $man . "M\n";
+    echo $finalStr . "\n";
+    
+    return null;
 }
 
-//RegisterVisitorsNumber("Z");
-var_dump(RegisterVisitorsNumber("WCWWCWMCM"));
+RegisterVisitorsNumber("");
+//var_dump(RegisterVisitorsNumber("MMMCMMWWMM")); // 3C 2M 4W
 //var_dump(RegisterVisitorsNumber(""));
+
+
+// Voir les égalités et enlever ce hardcode de merde !!!! + voir strlen
