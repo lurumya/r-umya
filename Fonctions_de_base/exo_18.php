@@ -1,6 +1,10 @@
 <?php
+/*
+=====================================================================================
+Page | numéro de l'exercice : p.8 | exo 18
 
-/*Ecrire une fonction qui retourne un tableau de tous les mots 
+Description :
+Ecrire une fonction qui retourne un tableau de tous les mots 
 d’une string qu’on lui a donné en paramètre. 
 Exemple : Bonjour Angelo est ce que ca va ?
 Doit donner :
@@ -15,6 +19,12 @@ Array {
  [6] => va
  [7] => ?
 }
+
+Explications :
+
+Commentaires :
+
+=====================================================================================
 */
 
 /*$str = "salut";
@@ -72,7 +82,7 @@ function ft_strToArray(...$str) : array {
     return $tab;
 }
 
-var_dump(ft_strToArray("Bonjour Angelo est ce que ca va ?"));
+//var_dump(ft_strToArray("Bonjour Angelo est ce que ca va ?"));
 //ft_strToArray("Bonjour Angelo est ce que ca va ?");
 
 

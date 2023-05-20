@@ -1,17 +1,25 @@
 <?php
+/*
+=====================================================================================
+Page | numéro de l'exercice : p.11 | exo 28
 
-//require_once '/home/wolfgang/rumya-exos/Fonctions_de_base/fonctions_de_base_2.php';
+Description :
+Un directeur engage un membre du personnel pour tenir un registre du nombre d'hommes, de femmes et d'enfants qui visitent 
+le musée quotidiennement. Le personnel notera W si des femmes visitent, M pour les hommes et C pour les enfants. 
+Ecrire une fonction qui prend la chaîne qui représente les visites et imprime le nombre d'hommes, de femmes et d'enfants. 
+Le séquençage doit être en ordre décroissant.
+Exemple:
+WWMMWWCCC
+Production attendue:
+4W3C2M
 
-// Un directeur engage un membre du personnel pour tenir un registre du nombre d'hommes, de
-// femmes et d'enfants qui visitent le musée quotidiennement. Le personnel notera W si des femmes
-// visitent, M pour les hommes et C pour les enfants. Ecrire une fonction qui prend la chaîne qui
-// représente les visites et imprime le nombre d'hommes, de femmes et d'enfants. Le séquençage doit
-// être en ordre décroissant.
+Explications :
 
-// Exemple:
-// WWMMWWCCC
-// Production attendue:
-// 4W3C2M
+Commentaires :
+- Voir les égalités et enlever ce hardcode de merde !!!! + voir strlen
+- require_once '/home/wolfgang/rumya-exos/Fonctions_de_base/fonctions_de_base_2.php';
+=====================================================================================
+*/
 
 function RegisterVisitorsNumber(string $human) : null {
     if ($human === "") {
@@ -55,13 +63,9 @@ function RegisterVisitorsNumber(string $human) : null {
         $finalStr = $man . $woman . $child;
 
     echo $finalStr . "\n";
-    
     return null;
 }
 
 RegisterVisitorsNumber("");
 //var_dump(RegisterVisitorsNumber("MMMCMMWWMM")); // 3C 2M 4W
 //var_dump(RegisterVisitorsNumber(""));
-
-
-// Voir les égalités et enlever ce hardcode de merde !!!! + voir strlen

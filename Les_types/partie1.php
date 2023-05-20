@@ -1,4 +1,16 @@
 <?php
+/*
+=====================================================================================
+Page | numéro de l'exercice : p.2 et 3 | exo 1 à 6 (partie 1)
+
+Description :
+
+Explications :
+
+Commentaires :
+
+=====================================================================================
+*/
 
 # 1)
 var_dump(1 + 2);
@@ -62,19 +74,3 @@ $i = 0;
 $i /= 1;
 echo $i;
 echo("\n");
-
-# 7)    Déclarer un tableau qui contiendra les valeurs "GE",
-#       "VD", "VS", puis afficher la 2e valeur du tableau.
-
-$tab = array("GE", "VD", "VS");
-echo($tab[1]);
-
-
-echo("\n");
-
-
-?>
-var_dump();
-var_dump((int)true);
-
-asdf 
