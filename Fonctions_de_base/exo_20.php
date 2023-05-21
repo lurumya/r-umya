@@ -14,4 +14,11 @@ Commentaires :
 =====================================================================================
 */
 
+function strIsRumya($str) : bool {
 
+    if (strcmp($str, "Rumya") === 0)
+        return true;
+    return false;
+}
+
+// var_dump(strIsRumya("Rumya"));
