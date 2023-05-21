@@ -10,7 +10,6 @@ puis afficher la 2e valeur du tableau
 Explications :
 
 Commentaires :
-
 =====================================================================================
 */
 
