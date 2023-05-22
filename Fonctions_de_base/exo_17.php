@@ -14,9 +14,9 @@ Commentaires :
 =====================================================================================
 */
 
-function str_to_char($str) : string {
-    return strtoupper($str);
+function strFirstCharUp($str) : string {
+    return ucfirst($str[0]);
 }
 
-//$i = str_to_char("salut");
-//echo $i;
+ 
+//echo strFirstCharUp("abc");

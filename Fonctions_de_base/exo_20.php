@@ -21,4 +21,4 @@ function strIsRumya($str) : bool {
     return false;
 }
 
-// var_dump(strIsRumya("Rumya"));
+//var_dump(strIsRumya("Rumya"));

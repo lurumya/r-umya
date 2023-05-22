@@ -14,43 +14,32 @@ Commentaires :
 =====================================================================================
 */
 
-function getBiggerArrayValue($array) : void {
+function getBiggerArrayValue($array) : int {
     $size = 0;
     foreach ($array as $element)
         $size++;
 
     $arrayTmp = $array;
     $sizeTmp = 0;
-    foreach ($arrayTmp as $element) {
-        if ($arrayTmp[$size] < $arrayTmp[$size - 1]) {
-            $arrayTmp[$size] = 0;
+    $j = 0;
+    while (($size - 1) > $sizeTmp) {
+        if ($arrayTmp[$sizeTmp] > $arrayTmp[$sizeTmp + 1]) {
+            $j++;
         }
-        echo $arrayTmp[$sizeTmp] . "\n";
-        $sizeTmp++;
-    }
-   /* if ($arrayTmp[$size] < $arrayTmp[$size - 1]) {
-        $arrayTmp[$size] = 0;
-    }
-        
-    elseif ($arrayTmp[$size] > $arrayTmp[$size - 1]) {
-        $arrayTmp[$size] = 1;
-    }
-    echo $arrayTmp[6] . "\n";
-    echo $array[6] . "\n";
-
-    $i = 0;*/
-    /*while ($i < $size) {
-        //echo $array[$i] . "\n";
-        if ($arrayTmp[$i] < $arrayTmp[$i + 1]) {
-             $arrayTmp[$i] = 0;
+        if ($arrayTmp[$sizeTmp] > $arrayTmp[$sizeTmp + 1]) {
+            $tmp = $arrayTmp[$sizeTmp];
+            $tmp1 = $arrayTmp[$sizeTmp + 1];
+            $arrayTmp[$sizeTmp] = $tmp1;
+            $arrayTmp[$sizeTmp + 1] = $tmp;
         }
-        echo $arrayTmp[$i] . "\n";
-        $i++;
-    }*/
-   //echo $array[0] . "\n";
-
-
+        if ($j > 0) {
+            $sizeTmp = 0;
+            $j = 0;
+        }
+        else
+            $sizeTmp++;
+    }
+    return $arrayTmp[$size - 1];
 }
-//echo $element . "\n";
 
-getBiggerArrayValue([-45,65,5,2,102,8,3]);
+echo getBiggerArrayValue([45,-65,5,555,2,102,8,3]) . "\n";

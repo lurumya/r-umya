@@ -15,4 +15,18 @@ Commentaires :
 */
 
 
+function averageTabValues($array) : int {
+    $size = 0;
+    foreach ($array as $element)
+        $size++;
+    
+    $i = 0;
+    $average = 0;
+    while ($size > $i) {
+        $average = $average + $array[$i];
+        $i++;
+    }
+    return $average / $size;
+}
 
+//echo averageTabValues([45,-65,5,65,555,2,102,8,3]);
