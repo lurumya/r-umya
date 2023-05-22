@@ -13,4 +13,4 @@ Problème dans la consigne donc petite blague ;)
 =====================================================================================
 */
 
-echo "une condition qui";
+"une condition qui";

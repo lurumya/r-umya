@@ -14,17 +14,17 @@ Commentaires :
 =====================================================================================
 */
 
-function smallerArgs($arg1, $arg2) : int {
-    if (arg1 < arg2) {
-        return (arg1);
+function smallerArgs($arg1, $arg2) : ?int {
+    if ($arg1 < $arg2) {
+        return ($arg1);
     }
-    else if (arg1 > arg2) {
-        return (arg2);
+    else if ($arg1 > $arg2) {
+        return ($arg2);
     }
     else {
         echo "Egalité ou autre erreur !";
-        exit (1);
+        return null;
     }
 }
 
-// echo smallerArgs($arg1, $arg2);
+//echo smallerArgs(52, 21);

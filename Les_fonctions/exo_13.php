@@ -9,7 +9,6 @@ et qui retourne la capitale de celui-ci, elle doit marcher pour la France,
 la Suisse, l’Allemagne et l’Italie, sinon elle doit retourner 
 « Inconnu ». il faudra utiliser le switch.
 
-
 Explications :
 
 Commentaires :
@@ -18,24 +17,25 @@ Commentaires :
 */
 
 function getCapital($country) : string {
-    strtolower($country);
+    $country = strtolower($country);
     switch ($country) {
-        case $country === "france":
+        case $country === 'france':
             echo("La capitale de la France est Paris !\n");
             break;
-        case $country === "suisse":
+        case $country === 'suisse':
             echo("La capitale de la Suisse est Berne !\n");
             break;
-        case $country === "allemagne":
+        case $country === 'allemagne':
             echo("La capitale de l'Allemagne est Berlin !\n");
             break;
-        case $country === "italie":
+        case $country === 'italie':
             echo("La capitale de l'Italie est Rome !\n");
             break;
         default:
             echo("Pays inconnu\n");
             break;
     }
+    return $country;
 }
 
-// getCapital("France");
+//getCapital('FraNce');

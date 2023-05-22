@@ -18,4 +18,4 @@ function divideArgs($arg1, $arg2) : int {
     return ($arg1 / $arg2);
 }
 
-//echo divideArgs($arg1, $arg2);
+//echo divideArgs(6, 2);
