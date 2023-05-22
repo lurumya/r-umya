@@ -12,6 +12,8 @@ d’habitants à partir de ce tableau ?
 Explications :
 
 Commentaires :
+Je parcours 2 fois mon tableau... Ici ça n'a aucune importance mais avec un tableau beaucoup plus grand,
+les performances seraient forcément impactées.
 
 =====================================================================================
 */
@@ -31,7 +33,7 @@ foreach($pays_population as $key => $value) {
     if ($value < 20000000)
         $i++;
 }
-echo 'Il y a ' . $i . " pays de moins de 20 millions d'habitants dans cette liste." . "\n";
+echo 'Il y a ' . $i . " pays de moins de 20 millions d'habitants dans cette liste.\n";
 
 foreach($pays_population as $key => $value) {
     if ($value < 20000000)
