@@ -14,7 +14,7 @@ Commentaires :
 =====================================================================================
 */
 
-function getAreaTriangle($base, $height) : float {
+function getAreaTriangle(int $base, int $height) : float {
     return (($base * $height) / 2);
 }
 

@@ -14,7 +14,7 @@ Commentaires :
 =====================================================================================
 */
 
-function ftAverageTableValue($tab) : int {
+function averageArrayValue($tab) : int {
     $average = 0;
     $i = 0;
     foreach ($tab as $element) {
@@ -24,5 +24,5 @@ function ftAverageTableValue($tab) : int {
     return $average;
 }
 
-// ftAverageTableValue([1,50,34,99,547,3]);
-// var_dump(ftAverageTableValue([1,50,34,99,547,3]));
+// averageArrayValue([1,50,34,99,547,3]);
+// var_dump(averageArrayValue([1,50,34,99,547,3]));

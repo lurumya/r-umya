@@ -21,10 +21,10 @@ Commentaires :
 =====================================================================================
 */
 
-function RegisterVisitorsNumber(string $human) : null {
+function RegisterVisitorsNumber(string $human) : void {
     if ($human === "") {
-        echo "Vous n'avez pas encore de visite !\n";
-        return null;
+        echo "0C0W0M";
+        return ;
     }
     $size = strlen($human);
     $i = 0;
@@ -32,40 +32,48 @@ function RegisterVisitorsNumber(string $human) : null {
     $manNbr = 0;
     $womanNbr = 0;
     while ($i < $size) {
-        if ($human[$i] !== "C" && $human[$i] !== "M" && $human[$i] !== "W") {
-            echo "Erreur !\nVous ne pouvez qu'utiliser les lettres majuscules C, M ou W et sans espace !\n";
-            return null;
-        }
-        if ($human[$i] === "C")
+        if ($human[$i] === 'C')
             $childNbr++;
-        elseif ($human[$i] === "M")
-            $manNbr++;
-        elseif ($human[$i] === "W")
-            $womanNbr++;
+        elseif ($human[$i] === 'M')
+            $manNbr++; 
+        elseif ($human[$i] === 'W')
+            $womanNbr++;  
+        else {
+            echo "Erreur !\nVous ne pouvez qu'utiliser les lettres majuscules C, M ou W et sans espace !\n";
+            return ; 
+        }
         $i++;
     }
 
-    $child = $childNbr . "C";
-    $man = $manNbr . "M";
-    $woman = $womanNbr . "W";
+    $fusionStrInt = [
+        'C' => $childNbr,
+        'M' => $manNbr,
+        'W' => $womanNbr
+    ];
 
-    if ($womanNbr < $childNbr && $womanNbr > $manNbr)
-        $finalStr = $child . $man . $woman;
-    elseif ($manNbr < $childNbr && $manNbr > $womanNbr)
-        $finalStr = $child . $man . $woman;
-    elseif ($childNbr < $womanNbr && $childNbr > $manNbr)
-        $finalStr = $woman . $child . $man;
-    elseif ($manNbr < $womanNbr && $manNbr > $childNbr)
-        $finalStr = $woman . $man . $child;
-    elseif ($childNbr < $manNbr && $childNbr > $womanNbr)
-        $finalStr = $man . $child . $woman;
-    elseif ($womanNbr < $manNbr && $womanNbr > $childNbr)
-        $finalStr = $man . $woman . $child;
-
-    echo $finalStr . "\n";
-    return null;
+    arsort($fusionStrInt);
+    foreach ($fusionStrInt as $visitor => $item) {
+        echo $item . $visitor;
+    }
+    echo "\n";
+    return ;
 }
 
-RegisterVisitorsNumber("");
+
+RegisterVisitorsNumber("MW");
+//RegisterVisitorsNumber("");
+RegisterVisitorsNumber("W");// 
+RegisterVisitorsNumber("C");// 
+RegisterVisitorsNumber("M");// 
+//RegisterVisitorsNumber("cM");// 
+RegisterVisitorsNumber("MWC");// 
+RegisterVisitorsNumber("MW");// 
+RegisterVisitorsNumber("WC");
+RegisterVisitorsNumber("MW");
+RegisterVisitorsNumber("MWCCC");
+RegisterVisitorsNumber("WMMMC");
+//var_dump(RegisterVisitorsNumber("CWWMMMM"));
+RegisterVisitorsNumber("CWWMMMM");
+
 //var_dump(RegisterVisitorsNumber("MMMCMMWWMM")); // 3C 2M 4W
 //var_dump(RegisterVisitorsNumber(""));

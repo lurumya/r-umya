@@ -14,7 +14,7 @@ Commentaires :
 =====================================================================================
 */
 
-function ftArraySize($tab) : int {
+function arraySize($tab) : int {
     $i = 0;
     foreach ($tab as $element)
         $i++;
@@ -22,12 +22,11 @@ function ftArraySize($tab) : int {
 }
 
 function arrayReverseValue($tab) : array {
-    $size = ftArraySize($tab) - 1;
+    $size = arraySize($tab) - 1;
     $i = 0;
     $arrayTmp = array();
     while ($size >= 0) {
         $arrayTmp[$i] = $tab[$size];
-        //echo ("i = " . $i . " | size = " . $size . " | arrayTmp[i] = " . $arrayTmp[$i] . "\n");
         $size--;
         $i++;
     }
@@ -35,4 +34,4 @@ function arrayReverseValue($tab) : array {
 }
 
 // arrayReverseValue([10,50,34,54,7]);
-//var_dump(arrayReverseValue([12,50,34,54,7]));
+//var_dump(arrayReverseValue([12,50,34,3,54,7]));

@@ -14,13 +14,13 @@ Commentaires :
 =====================================================================================
 */
 
-function ftCheckEvenNumber($nbr) : ?bool {
-    if ($nbr % 2 != 0)
+function checkEvenNumber($nbr) : ?bool {
+    if ($nbr % 2 !== 0)
         return false;
-    elseif ($nbr % 2 == 0)
+    elseif ($nbr % 2 === 0)
         return true;
-    return null;
+    else
+        return null;
 }
 
-// ftCheckEvenNumber(45);
-// var_dump(ftCheckEvenNumber(-43));
+//var_dump(checkEvenNumber(25));
