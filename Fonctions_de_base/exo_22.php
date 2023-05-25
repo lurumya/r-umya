@@ -42,4 +42,4 @@ function getBiggerArrayValue($array) : int {
     return $arrayTmp[$size - 1];
 }
 
-echo getBiggerArrayValue([45,-65,5,555,2,102,8,3]) . "\n";
+//echo getBiggerArrayValue([45,-65,5,555,2,102,8,3]) . "\n";

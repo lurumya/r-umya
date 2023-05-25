@@ -16,8 +16,7 @@ Production attendue:
 Explications :
 
 Commentaires :
-- Voir les égalités et enlever ce hardcode de merde !!!! + voir strlen
-- require_once '/home/wolfgang/rumya-exos/Fonctions_de_base/fonctions_de_base_2.php';
+J'ai utilisé 2 fonctions internes de PHP ; si j'ai le temps, je corrigerais ce code pour les enlever
 =====================================================================================
 */
 
@@ -44,13 +43,11 @@ function RegisterVisitorsNumber(string $human) : void {
         }
         $i++;
     }
-
     $fusionStrInt = [
         'C' => $childNbr,
         'M' => $manNbr,
         'W' => $womanNbr
     ];
-
     arsort($fusionStrInt);
     foreach ($fusionStrInt as $visitor => $item) {
         echo $item . $visitor;
@@ -59,21 +56,19 @@ function RegisterVisitorsNumber(string $human) : void {
     return ;
 }
 
-
+//RegisterVisitorsNumber("WMMCCC");
+/*RegisterVisitorsNumber("MW");
+RegisterVisitorsNumber("");
+RegisterVisitorsNumber("W");
+RegisterVisitorsNumber("C");
+RegisterVisitorsNumber("M");
+RegisterVisitorsNumber("cM"); 
+RegisterVisitorsNumber("MWC");
 RegisterVisitorsNumber("MW");
-//RegisterVisitorsNumber("");
-RegisterVisitorsNumber("W");// 
-RegisterVisitorsNumber("C");// 
-RegisterVisitorsNumber("M");// 
-//RegisterVisitorsNumber("cM");// 
-RegisterVisitorsNumber("MWC");// 
-RegisterVisitorsNumber("MW");// 
 RegisterVisitorsNumber("WC");
 RegisterVisitorsNumber("MW");
 RegisterVisitorsNumber("MWCCC");
 RegisterVisitorsNumber("WMMMC");
 //var_dump(RegisterVisitorsNumber("CWWMMMM"));
-RegisterVisitorsNumber("CWWMMMM");
-
 //var_dump(RegisterVisitorsNumber("MMMCMMWWMM")); // 3C 2M 4W
-//var_dump(RegisterVisitorsNumber(""));
+//var_dump(RegisterVisitorsNumber(""));*/

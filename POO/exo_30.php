@@ -15,8 +15,8 @@ Commentaires :
 */
 
 class Contact {
-    public $name;
-    public $firstname;
+    private $name;
+    private $firstname;
 
     public function __construct($name, $firstname) {
         echo "Je suis là et je suis " . $this->name = $name . " " . $this->firstname = $firstname . "\n";

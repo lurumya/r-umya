@@ -16,20 +16,27 @@ Commentaires :
 */
 
 class Contact {
-    public $name;
-    public $firstname;
+    private $name;
+    private $firstname;
 
     public function __construct($name, $firstname) {
         $this->name = $name;
         $this->firstname = $firstname;
     }
+    
+    public function setName($name, $firstname) {
+        $this->name = $name;
+        $this->firstname = $firstname;
+    }
 
-    public function whoAreYou($name, $firstname) {
-        echo "Je suis là et je suis " . $this->name = $name . " " . $this->firstname = $firstname . "\n";
+    public function whoAreYou() {
+        echo "Je suis là et je suis " . $this->name . " " . $this->firstname . "\n";
     }
 }
-
+/*
 $contact = new Contact("Prospero", "Angelo");
-$contact->whoAreYou("Anderson", "Pamela");
-//var_dump($contact); // problème avec var_dump
+$contact->whoAreYou();
+$contact->setName("Anderson", "Pamela");
+$contact->whoAreYou();
+*/
 

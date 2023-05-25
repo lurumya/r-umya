@@ -22,13 +22,13 @@ class Contact {
 */
 
 class Contact {
-    public $isThere;
+    private $isThere;
 
     public function __construct() {
         $this->isThere = "Je suis là\n";
+        //echo $this->isThere = "Je suis là\n";
     }
 }
 
-//$contact = new Contact();
+$contact = new Contact();
 //var_dump($contact = new Contact());
-
