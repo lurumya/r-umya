@@ -1,7 +1,7 @@
 <?php
 /*
 =====================================================================================
-Page | numéro de l'exercice : p.2 et 3 | exo 1 à 6 (partie 1)
+Page | numéro de l'exercice : p.2 | exo 1 à 6 (partie 1)
 
 Description :
 Quelles seront les valeurs affichées ?
