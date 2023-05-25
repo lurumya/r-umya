@@ -5,8 +5,7 @@ Page | numéro de l'exercice : p.16 | exo 37
 
 Description : considérons cette table
 
-1) Quelle requête utiliser pour afficher l'ensemble des enregistrements de la
-table lpecom_livres ?
+1) Quelle requête utiliser pour afficher l'ensemble des enregistrements de la table lpecom_livres ?
 
 2)  Quelle requête utiliser pour sélectionner uniquement les livres qui ont un prix strictement supérieur à
 20 de la table lpecom_livres ?
