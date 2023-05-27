@@ -22,7 +22,7 @@ while ($i <= 9) {
     $tab[$i] = rand(30, 50);
     if ($tab[$i] === 42)
         $j++;
-    //echo $i . " = " . $tab[$i] . "\n";
+    //echo $i . ' = ' . $tab[$i] . "\n";
     $i++;
 }
 

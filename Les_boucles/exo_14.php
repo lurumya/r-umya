@@ -33,9 +33,9 @@ foreach($pays_population as $key => $value) {
     if ($value < 20000000)
         $i++;
 }
-echo 'Il y a ' . $i . " pays de moins de 20 millions d'habitants dans cette liste.\n";
+echo 'Il y a ' . $i . ' pays de moins de 20 millions d\'habitants dans cette liste.' . "\n";
 
 foreach($pays_population as $key => $value) {
     if ($value < 20000000)
-        echo $key . " : " . $value . "\n";
+        echo $key . ' : ' . $value . "\n";
 }

@@ -1,4 +1,5 @@
 <?php
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.10 | exo 24
@@ -14,8 +15,14 @@ Commentaires :
 =====================================================================================
 */
 
-function getAreaTriangle(int $base, int $height) : float {
+function getAreaTriangle(int $base, int $height) : ?float {
+    if (Errorhandling::errorArgc() === -1)
+        return null;
+    if (func_num_args() !== 2) {
+        echo 'Wrong parameters number !' . "\n";
+        return null;
+    }
     return (($base * $height) / 2);
 }
 
-//echo getAreaTriangle(5, 3);
+getAreaTriangle(5, 3);

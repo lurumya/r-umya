@@ -1,4 +1,5 @@
 <?php
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.10 | exo 27
@@ -14,7 +15,19 @@ Commentaires :
 =====================================================================================
 */
 
-function averageArrayValue($tab) : int {
+function averageArrayValue(array $tab) : ?int {
+    if (Errorhandling::errorArgc() === -1)
+        return null;
+    if (func_num_args() !== 1) {
+    echo 'Wrong parameters number !' . "\n";
+    return null;
+    }
+    foreach($tab as $item) {
+        if (is_int($item) === false) {
+            echo 'There is a value that isn\'t a integer !' . "\n";
+            return null;
+        }
+    }
     $average = 0;
     $i = 0;
     foreach ($tab as $element) {
@@ -24,5 +37,5 @@ function averageArrayValue($tab) : int {
     return $average;
 }
 
-// averageArrayValue([1,50,34,99,547,3]);
+//averageArrayValue([1,50,"string",99,547,3]);
 // var_dump(averageArrayValue([1,50,34,99,547,3]));

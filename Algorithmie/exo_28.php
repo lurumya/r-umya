@@ -1,4 +1,5 @@
 <?php
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.11 | exo 28
@@ -20,10 +21,16 @@ J'ai utilisé 2 fonctions internes de PHP ; si j'ai le temps, je corrigerais ce 
 =====================================================================================
 */
 
-function RegisterVisitorsNumber(string $human) : void {
+function RegisterVisitorsNumber(string $human) : null {
+    if (Errorhandling::errorArgc() === -1)
+        return null;
     if ($human === "") {
-        echo "0C0W0M";
-        return ;
+        echo '0C0W0M' . "\n";
+        return null;
+    }
+    if (func_num_args() !== 1) {
+        echo 'Wrong parameters number !' . "\n";
+        return null;
     }
     $size = strlen($human);
     $i = 0;
@@ -39,7 +46,7 @@ function RegisterVisitorsNumber(string $human) : void {
             $womanNbr++;  
         else {
             echo "Erreur !\nVous ne pouvez qu'utiliser les lettres majuscules C, M ou W et sans espace !\n";
-            return ; 
+            return null;
         }
         $i++;
     }
@@ -53,12 +60,11 @@ function RegisterVisitorsNumber(string $human) : void {
         echo $item . $visitor;
     }
     echo "\n";
-    return ;
+    return null;
 }
 
-//RegisterVisitorsNumber("WMMCCC");
-/*RegisterVisitorsNumber("MW");
-RegisterVisitorsNumber("");
+//RegisterVisitorsNumber("CCMWWMMMMWWMC");
+/*RegisterVisitorsNumber("");
 RegisterVisitorsNumber("W");
 RegisterVisitorsNumber("C");
 RegisterVisitorsNumber("M");
