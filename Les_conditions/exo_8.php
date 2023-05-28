@@ -17,8 +17,8 @@ Commentaires :
 */
 
 $x = 101; # A modifier manuellement
-if (is_int($x) == false) {
-    echo("Write a integer please !");
+if (is_int($x) === false) {
+    echo 'Write an integer please !';
 }
 else if ($x < 20) {
     echo 'A';

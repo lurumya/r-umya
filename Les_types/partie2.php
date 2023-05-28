@@ -14,4 +14,4 @@ Commentaires :
 */
 
 $tab = array("GE", "VD", "VS");
-echo($tab[1]);
+echo $tab[1] . "\n";

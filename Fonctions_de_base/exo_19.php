@@ -17,7 +17,7 @@ vous utilisez également cette fonction (ou explode, je ne me rappelle plus). Vo
 */
 
 function arrayToStr(array $tab) : string {
-    return implode(" ", $tab);
+    return implode(' ', $tab);
 }
 
 //var_dump(arrayToStr(['Salut', 'comment', 'tu', 'vas', '?']));

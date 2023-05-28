@@ -12,8 +12,8 @@ d’habitants à partir de ce tableau ?
 Explications :
 
 Commentaires :
-Je parcours 2 fois mon tableau... Ici ça n'a aucune importance mais avec un tableau beaucoup plus grand,
-les performances seraient forcément impactées.
+Je parcours 2 fois mon tableau... Ici ça n'a aucune importance mais avec 
+un tableau beaucoup plus grand les performances seraient forcément impactées.
 
 =====================================================================================
 */

@@ -30,8 +30,8 @@ vous utilisez également cette fonction (ou implode, je ne me rappelle plus). Vo
 */
 
 function ft_strToArray($str) : array {
-    return explode(" ", $str);
+    return explode(' ', $str);
 }
 
-var_dump(ft_strToArray("Salut comment tu vas ?"));
+//var_dump(ft_strToArray('Salut comment tu vas ?'));
 

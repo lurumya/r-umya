@@ -19,4 +19,4 @@ function strFirstCharUp($str) : string {
 }
 
  
-//echo strFirstCharUp("abc");
+//echo strFirstCharUp('abc');
