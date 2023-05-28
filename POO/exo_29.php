@@ -13,22 +13,15 @@ La consigne dit "dira" et non "affichera".
 =====================================================================================
 */
 
-/*
-class Contact {
-    public function __construct() {
-        echo "Je suis là\n";
-    }
-}
-*/
-
 class Contact {
     private $isThere;
 
     public function __construct() {
-        $this->isThere = "Je suis là\n";
-        //echo $this->isThere = "Je suis là\n";
+        //$this->isThere = 'Je suis là' . "\n";
+        //echo 'Je suis là' . "\n";
+        echo $this->isThere = 'Je suis là' . "\n";
     }
 }
 
-$contact = new Contact();
+//$contact = new Contact();
 //var_dump($contact = new Contact());

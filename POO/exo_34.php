@@ -32,12 +32,12 @@ class Canard {
 
 Commentaires :
 Pas optimal, je répète deux fois move(). Le problème que je vois ici
-c'est que je pourrais rendre ce code plus court sans me répéter 
+est que je pourrais rendre ce code plus court sans me répéter 
 mais ça déformerait un peu "la propreté" et la logique de la POO et
 de l'exercice surtout. Par exemple, je supprimerais toutes les classes 
 étendus, je créerais un objet et ensuite j'appliquerais directement
-les méthodes utils.
-Malgré tout, il faut que je trouve une meilleure manière de résoudre 
+les méthodes utiles.
+Malgré tout, il faudrait que je trouve une meilleure manière de résoudre 
 ce problème de move() ds cet exo.
 =====================================================================================
 */
@@ -86,8 +86,9 @@ class Anseriforme extends Movement {
     }
 }
 
-
+/*
 $chat = new Felin();
 $chat->move();
 $canard = new Anseriforme();
 $canard->move();
+*/

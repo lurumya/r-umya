@@ -11,10 +11,45 @@ la méthode whoIsYouBf() il devra nous dire qui est son meilleur ami.
 Explications :
 
 Commentaires :
-
+clairement j'ai pas bien compris et je n'arrive pas à bien comprendre et articuler
+les différentes instances entre elles (si c'est le bon mot).
 =====================================================================================
 */
 
+class Contact {
+
+    private $contactName;
+    private $bestFriendName;
+    private static $objectNbr = 0;
+
+    public function __construct($contactName) {
+        $this->contactName = $contactName;
+        self::$objectNbr++;
+    }
+
+    public function setBestFriend(Contact $bestFriendName) : void {
+        if (self::$objectNbr === 2) {
+            $this->bestFriendName = $bestFriendName;
+        }
+    }
+
+    public function whoIsYouBf() : void {
+        if ($this->bestFriendName) {
+            echo "My best friend is " . $this->bestFriendName->contactName . "\n";
+        }
+    }
+}
+
+$contact = new Contact('Angelo');
+$friend = new Contact('Donald');
+$contact->setBestFriend($friend);
+$friend->setBestFriend($contact);
+
+$contact->whoIsYouBf();
+$friend->whoIsYouBf();
+
+
+/*
 class Contact {
     private $name;
     private $bestFriendName;
@@ -56,4 +91,4 @@ $contact->setBestFriend($friend);
 
 $contact->whoIsYourBf();
 $friend->whoIsYourBf();
-
+*/

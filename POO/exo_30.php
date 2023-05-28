@@ -19,8 +19,8 @@ class Contact {
     private $firstname;
 
     public function __construct($name, $firstname) {
-        echo "Je suis là et je suis " . $this->name = $name . " " . $this->firstname = $firstname . "\n";
+        echo 'Je suis là et je suis ' . $this->name = $name . ' ' . $this->firstname = $firstname . "\n";
     }
 }
 
-//$contact = new Contact("Angelo", "Prospero");
+//$contact = new Contact('Angelo', 'Prospero');

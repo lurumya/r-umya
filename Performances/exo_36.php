@@ -29,8 +29,8 @@ Commentaires :
 
 /*
 - Question 1)  Combien de temps mettra-t-il à s’exécuter ?
-Ici nous en présence de 2 foreach, le foreach "père" utilisant la méthode load. 
-Sous réserve de ce qu'il y a ds le foreach "fils", on peut déjà au moins 10 secondes.
+Nous sommes en présence de 2 foreach, le foreach "père" utilisant la méthode load. 
+Sous réserve de ce qu'il y a ds le foreach "fils", on peut déjà dire au moins 10 secondes.
 Le foreach "fils" fait exactement la meme chose, donc nous pouvons dire que ce code 
 mettra 20 secondes à s'exécuter !
 Maintenant un peu d'explication : le premier foreach permet de créer un objet. Le 2ème également.

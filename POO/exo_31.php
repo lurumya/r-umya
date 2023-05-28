@@ -19,24 +19,37 @@ class Contact {
     private $name;
     private $firstname;
 
-    public function __construct($name, $firstname) {
+    public function __construct(string $name, string $firstname) {
         $this->name = $name;
         $this->firstname = $firstname;
     }
     
-    public function setName($name, $firstname) {
+    public function setName(string $name) : Contact {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function setFirstname(string $firstname) : Contact {
+        $this->firstname = $firstname;
+        return $this;
+    }
+
+    public function setNameFirstname(string $name, string $firstname) : void {
         $this->name = $name;
         $this->firstname = $firstname;
     }
 
-    public function whoAreYou() {
-        echo "Je suis là et je suis " . $this->name . " " . $this->firstname . "\n";
+    public function whoAreYou() : void {
+        echo 'Je suis là et je suis ' . $this->name . ' ' . $this->firstname . "\n";
     }
 }
+
 /*
-$contact = new Contact("Prospero", "Angelo");
+$contact = new Contact('Prospero', 'Angelo');
 $contact->whoAreYou();
-$contact->setName("Anderson", "Pamela");
+$contact->setName('Anderson')->setFirstname('Pamela');
+$contact->whoAreYou();
+$contact->setNameFirstname('Trump', 'Donald');
 $contact->whoAreYou();
 */
 
