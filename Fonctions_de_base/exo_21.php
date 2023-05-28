@@ -1,4 +1,5 @@
 <?php
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.9 | exo 21
@@ -14,8 +15,15 @@ Voir les commentaires ci-dessous dans la fonction
 =====================================================================================
 */
 
-function strIsRumyaTwo(string $str) : bool {
-    
+function strIsRumyaTwo($str) : bool {
+    Errorhandling::errorArgc();
+    if (func_num_args() !== 1) {
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
+    }
+    Errorhandling::errorTypeArgStr($str);
+    Errorhandling::errorEmptyArg($str);
+
     //echo mb_detect_encoding($str) . "\n"; // comportement attendu : ASCII mais ça donne UTF-8 !??
     $str = mb_strtolower($str, 'UTF-8');
     //echo mb_detect_encoding($str) . "\n";
@@ -31,3 +39,6 @@ function strIsRumyaTwo(string $str) : bool {
 
 //var_dump(strIsRumyaTwo('ruMyaÉ'));
 //strIsRumyaTwo('ruMyaÉ');
+//var_dump(strIsRumyaTwo(''));
+//var_dump(strIsRumyaTwo('RuMya', 'str'));
+//var_dump(strIsRumyaTwo(59));

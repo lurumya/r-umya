@@ -1,5 +1,5 @@
 <?php
-require_once('../Utils/ft_errors.php');
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.6 | exo 13
@@ -18,16 +18,13 @@ Commentaires :
 */
 
 function getCapital($country) : string {
-    errorArgc();
+    Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
-        echo 'wrong number of function arguments !' . "\n";
-        exit(-1);
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
     }
-    errorTypeArgStr($country);
-    if ($country === '') {
-        echo 'Write a country please !' . "\n";
-        exit(-1);
-    }
+    Errorhandling::errorTypeArgStr($country);
+    Errorhandling::errorEmptyArg($country);
     $country = strtolower($country);
     switch ($country) {
         case $country === 'france':

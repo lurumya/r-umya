@@ -1,4 +1,5 @@
 <?php
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.9 | exo 23
@@ -16,6 +17,13 @@ Commentaires :
 
 
 function averageTabValues($array) : int {
+    Errorhandling::errorArgc();
+    if (func_num_args() !== 1) {
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
+    }
+    Errorhandling::errorTypeArgStr($country);
+    Errorhandling::errorEmptyArg($country);
     $size = 0;
     foreach ($array as $element)
         $size++;

@@ -1,5 +1,5 @@
 <?php
-require_once('../Utils/ft_errors.php');
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.5 | exo 11
@@ -15,18 +15,19 @@ Commentaires :
 =====================================================================================
 */
 
-
-
 function divideArgs($arg1, $arg2) : int {
-    errorArgc();
+    Errorhandling::errorArgc();
+    //Errorhandling::errorParamNbr(2);
     if (func_num_args() !== 2) {
-        echo 'wrong number of function arguments !' . "\n";
-        exit(-1);
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
     }
-    errorTypeArgInt($arg1, $arg2);
+    Errorhandling::errorTypeArgInt($arg1, $arg2);
     return ($arg1 / $arg2);
 }
 
-// ne fonctionne pas avec un seul argument
+
+// ne fonctionne pas avec un seul argument ou aucun
+//divideArgs(20);
+//divideArgs();
 //divideArgs(20, 4);
-divideArgs();

@@ -1,4 +1,5 @@
 <?php
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.8 | exo 19
@@ -16,8 +17,17 @@ vous utilisez également cette fonction (ou explode, je ne me rappelle plus). Vo
 =====================================================================================
 */
 
-function arrayToStr(array $tab) : string {
+function arrayToStr($tab) : string {
+    Errorhandling::errorArgc();
+    if (func_num_args() !== 1) {
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
+    }
+    //Errorhandling::errorTypeArgStr($str);
+    Errorhandling::errorEmptyArg($tab);
     return implode(' ', $tab);
 }
 
 //var_dump(arrayToStr(['Salut', 'comment', 'tu', 'vas', '?']));
+//arrayToStr(['Salut', 'comment', 'tu', 'vas', '?']);
+//var_dump(arrayToStr([]));

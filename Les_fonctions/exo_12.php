@@ -1,5 +1,5 @@
 <?php
-require_once('../Utils/ft_errors.php');
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.5 | exo 12
@@ -15,23 +15,20 @@ Commentaires :
 =====================================================================================
 */
 
-function smallerArgs($arg1, $arg2) : ?int {
-    errorArgc();
+function smallerArgs($arg1, $arg2) : int {
+    Errorhandling::errorArgc();
     if (func_num_args() !== 2) {
-        echo 'wrong number of function arguments !' . "\n";
-        exit(-1);
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
     }
-    errorTypeArgInt($arg1, $arg2);
+    Errorhandling::errorTypeArgInt($arg1, $arg2);
     if ($arg1 < $arg2) {
         return ($arg1);
     }
     else if ($arg1 > $arg2) {
         return ($arg2);
     }
-    else {
-        echo 'Egalité ou autre erreur !' . "\n";
-        return null;
-    }
+    return -1;
 }
 
-//echo smallerArgs(52, 21);
+//echo smallerArgs(52, 21) . "\n";

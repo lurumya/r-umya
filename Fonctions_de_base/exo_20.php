@@ -1,4 +1,5 @@
 <?php
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.8 | exo 20
@@ -14,11 +15,21 @@ Commentaires :
 =====================================================================================
 */
 
-function strIsRumya(string $str) : bool {
-
+function strIsRumya($str) : bool {
+    Errorhandling::errorArgc();
+    if (func_num_args() !== 1) {
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
+    }
+    Errorhandling::errorTypeArgStr($str);
+    Errorhandling::errorEmptyArg($str);
     if (strcmp($str, 'Rumya') === 0)
         return true;
     return false;
 }
 
 //var_dump(strIsRumya('RuMya'));
+//var_dump(strIsRumya(''));
+//var_dump(strIsRumya('RuMya', 'str'));
+//var_dump(strIsRumya(59));
+

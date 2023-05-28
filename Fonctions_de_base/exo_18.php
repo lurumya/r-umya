@@ -1,4 +1,5 @@
 <?php
+require_once('../POO/Errorhandling.php');
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.8 | exo 18
@@ -30,8 +31,18 @@ vous utilisez également cette fonction (ou implode, je ne me rappelle plus). Vo
 */
 
 function ft_strToArray($str) : array {
+    Errorhandling::errorArgc();
+    if (func_num_args() !== 1) {
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
+    }
+    Errorhandling::errorTypeArgStr($str);
+    Errorhandling::errorEmptyArg($str);
     return explode(' ', $str);
 }
 
 //var_dump(ft_strToArray('Salut comment tu vas ?'));
-
+//ft_strToArray('Salut comment tu vas ?');
+//ft_strToArray('');
+//var_dump(ft_strToArray(56));
+//ft_strToArray('Salut comment tu vas ?', 'str');
