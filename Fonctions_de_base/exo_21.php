@@ -15,6 +15,11 @@ Voir les commentaires ci-dessous dans la fonction
 =====================================================================================
 */
 
+/**
+  * Remarque globale :
+ * en général quand on veut s'abstraire des accents le plus simple est de les remplacer
+ */
+
 function strIsRumyaTwo($str = '') : bool {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {

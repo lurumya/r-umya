@@ -15,6 +15,12 @@ Commentaires :
 =====================================================================================
 */
 
+
+/**
+ * C'est fonctionnel en effet, cependant je pense que ca peut être simplifié
+ * je pense que tu peux te contenter de parcourir ton tableau comme tu le fais déjà, et sauvegarder la valeur dans une variable uniquement si elle est supérieure au maximum que tu as déjà trouvé
+ * en bonus tu pourras aussi faire ce même exo avec les fonctions php de base
+ */
 function getBiggerArrayValue($array = []) : int {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
