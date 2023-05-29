@@ -21,8 +21,8 @@ function getBiggerArrayValue($array) : int {
         echo 'Wrong number of function arguments !' . "\n";
         exit(255);
     }
-    Errorhandling::errorTypeArgStr($country);
-    Errorhandling::errorEmptyArg($country);
+    Errorhandling::errorEmptyArg($array);
+    Errorhandling::errorTypeArgTabInt($array);
     $size = 0;
     foreach ($array as $element)
         $size++;
@@ -51,3 +51,7 @@ function getBiggerArrayValue($array) : int {
 }
 
 //echo getBiggerArrayValue([45,-65,5,555,2,102,8,3]) . "\n";
+//getBiggerArrayValue([45,-65,"str",555,2,102,8,3]);
+//getBiggerArrayValue([45,-65,5,555,2,102,8,3]);
+//getBiggerArrayValue([45,-65,"str",555,2,102,8,3]);
+//getBiggerArrayValue([]);

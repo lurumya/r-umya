@@ -53,13 +53,24 @@ class Errorhandling {
     public static function errorTypeArgStr($arg) : int {
         if (is_string($arg) === false) {
             echo 'Type not respected in function parameters !' . "\n";
-            exit(-1);
+            exit(255);
+        }
+        return 0;
+    }
+
+    public static function errorTypeArgTabInt($array) : int {
+        
+        foreach ($array as $item) {
+            if (is_int($item) === false) {
+                echo 'Type not respected in function parameters !' . "\n";
+                exit(255);
+            }
         }
         return 0;
     }
 
     public static function errorEmptyArg($arg) : int {
-        if ($arg === '') {
+        if ($arg === '' || $arg === []) {
             echo 'Empty parameters !' . "\n";
             exit(255);
         }

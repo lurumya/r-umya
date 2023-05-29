@@ -22,8 +22,8 @@ function averageTabValues($array) : int {
         echo 'Wrong number of function arguments !' . "\n";
         exit(255);
     }
-    Errorhandling::errorTypeArgStr($country);
-    Errorhandling::errorEmptyArg($country);
+    Errorhandling::errorEmptyArg($array);
+    Errorhandling::errorTypeArgTabInt($array);
     $size = 0;
     foreach ($array as $element)
         $size++;
@@ -37,4 +37,7 @@ function averageTabValues($array) : int {
     return $average / $size;
 }
 
-//echo averageTabValues([45,-65,5,65,555,2,102,8,3]);
+//averageTabValues([45,-65,5,65,555,2,102,8,3]);
+//averageTabValues([45,-65,5,65,'salut',2,102,8,3]);
+//averageTabValues([45,-65,5,65,555,2,102,8,3]);
+//averageTabValues([]);

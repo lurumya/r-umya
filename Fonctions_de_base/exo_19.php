@@ -23,11 +23,12 @@ function arrayToStr($tab) : string {
         echo 'Wrong number of function arguments !' . "\n";
         exit(255);
     }
-    //Errorhandling::errorTypeArgStr($str);
     Errorhandling::errorEmptyArg($tab);
+    Errorhandling::errorTypeArgTabStr($tab);
     return implode(' ', $tab);
 }
 
 //var_dump(arrayToStr(['Salut', 'comment', 'tu', 'vas', '?']));
 //arrayToStr(['Salut', 'comment', 'tu', 'vas', '?']);
+//arrayToStr(['Salut', 5, 'tu', 'vas', '?']);
 //var_dump(arrayToStr([]));
