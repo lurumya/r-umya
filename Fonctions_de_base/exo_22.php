@@ -15,12 +15,53 @@ Commentaires :
 =====================================================================================
 */
 
+function getBiggerArrayValueEasy(?array $array = []) : int {
+    Errorhandling::errorArgc();
+    return (max($array));
+}
+
+//var_dump(getBiggerArrayValueEasy([45,-65,5,555,2,102,8,3]));
+
+function getBiggerArrayValueHard($array = []) : int {
+    Errorhandling::errorArgc();
+    
+    $size = 0;
+    foreach ($array as $element)
+        $size++;
+
+    $arrayTmp = $array;
+    $sizeTmp = 0;
+    $j = 0;
+    while (($size - 1) > $sizeTmp) {
+        if ($arrayTmp[$sizeTmp] > $arrayTmp[$sizeTmp + 1]) {
+            $j++;
+        }
+        if ($arrayTmp[$sizeTmp] > $arrayTmp[$sizeTmp + 1]) {
+            $tmp = $arrayTmp[$sizeTmp];
+            $tmp1 = $arrayTmp[$sizeTmp + 1];
+            $arrayTmp[$sizeTmp] = $tmp1;
+            $arrayTmp[$sizeTmp + 1] = $tmp;
+        }
+        if ($j > 0) {
+            $sizeTmp = 0;
+            $j = 0;
+        }
+        else
+            $sizeTmp++;
+    }
+    return $arrayTmp[$size - 1];
+}
+
+//var_dump(getBiggerArrayValueHard([45,-65,5,555,2,102,8,3]));
+
 
 /**
  * C'est fonctionnel en effet, cependant je pense que ca peut être simplifié
  * je pense que tu peux te contenter de parcourir ton tableau comme tu le fais déjà, et sauvegarder la valeur dans une variable uniquement si elle est supérieure au maximum que tu as déjà trouvé
  * en bonus tu pourras aussi faire ce même exo avec les fonctions php de base
  */
+
+ /*
 function getBiggerArrayValue($array = []) : int {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
@@ -55,6 +96,8 @@ function getBiggerArrayValue($array = []) : int {
     }
     return $arrayTmp[$size - 1];
 }
+*/
+
 
 //getBiggerArrayValue([45,-65,5,555,2,102,8,3]);
 //getBiggerArrayValue([]);

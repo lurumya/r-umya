@@ -15,11 +15,42 @@ Voir les commentaires ci-dessous dans la fonction
 =====================================================================================
 */
 
+function strIsRumyaTwo(?string $str = '') : bool {
+    Errorhandling::errorArgc();
+	$search  = array('À','Á','Â','Ã','Ä','Å','Ç','È','É','Ê','Ë','Ì','Í','Î','Ï','Ò','Ó','Ô','Õ','Ö','Ù','Ú','Û','Ü','Ý','à','á','â','ã','ä','å','ç','è','é','ê','ë','ì','í','î','ï','ð','ò','ó','ô','õ','ö','ù','ú','û','ü','ý','ÿ');
+	$replace = array('A','A','A','A','A','A','C','E','E','E','E','I','I','I','I','O','O','O','O','O','U','U','U','U','Y','a','a','a','a','a','a','c','e','e','e','e','i','i','i','i','o','o','o','o','o','o','u','u','u','u','y','y');
+	$str = str_replace($search, $replace, $str);
+    $str = strtolower($str);
+    $str = ucfirst($str);
+    if (strcmp($str, 'Rumya') === 0)
+        return true;
+    return false;
+}
+
+//var_dump(strIsRumyaTwo('RuMyÀ'));
+//var_dump(strIsRumyaTwo(''));
+//var_dump(strIsRumyaTwo());
+
+//strIsRumyaTwo('');
+//strIsRumyaTwo(5);
+//strIsRumyaTwo();
+//strIsRumyaTwo('asdf');
+//strIsRumyaTwo('RuMya', 6);
+//strIsRumyaTwo('RuMya', 'str');
+//strIsRumyaTwo([]);
+
+//var_dump(strIsRumyaTwo('ruMyaÉ'));
+//strIsRumyaTwo('ruMyaÉ');
+//var_dump(strIsRumyaTwo(''));
+//var_dump(strIsRumyaTwo('RuMya', 'str'));
+//var_dump(strIsRumyaTwo(59));
+
+
 /**
   * Remarque globale :
  * en général quand on veut s'abstraire des accents le plus simple est de les remplacer
  */
-
+/*
 function strIsRumyaTwo($str = '') : bool {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
@@ -40,18 +71,4 @@ function strIsRumyaTwo($str = '') : bool {
         return true;
     return false;
 }
-
-//strIsRumyaTwo('RuMya');
-//strIsRumyaTwo('');
-//strIsRumyaTwo(5);
-//strIsRumyaTwo();
-//strIsRumyaTwo('asdf');
-//strIsRumyaTwo('RuMya', 6);
-//strIsRumyaTwo('RuMya', 'str');
-//strIsRumyaTwo([]);
-
-//var_dump(strIsRumyaTwo('ruMyaÉ'));
-//strIsRumyaTwo('ruMyaÉ');
-//var_dump(strIsRumyaTwo(''));
-//var_dump(strIsRumyaTwo('RuMya', 'str'));
-//var_dump(strIsRumyaTwo(59));
+*/

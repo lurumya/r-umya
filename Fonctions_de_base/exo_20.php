@@ -64,17 +64,19 @@ function strIsRumya($str = '') : bool {
 /**
  * Ma solution à l'exo :
  */
-function isRumya(?string $str) : bool {
-    $isRumya = false;
-    if (strcmp($str, 'Rumya') === 0){
-        $isRumya = true;
-    }
-    return $isRumya;
-}
+function isRumya(?string $str) : bool { // Angelo : (sauf erreur, j'ai l'impression que tu as oublié de mettre : $str = '';
+    $isRumya = false;                   // sinon ça fait une erreur si tu ne mets aucun argument à la fonction
+    if (strcmp($str, 'Rumya') === 0){   // (et je comprends pk)). Par contre, je ne comprends pas très bien pk
+        $isRumya = true;                // ce code est plus opti que celui de l'exo 21 - ligne 27 à 29.
+    }                                   // Est-ce pour une question de visibilité ?
+    return $isRumya;                    // Parce que dans l'absolu tu crées une variable alors qu'on pourrait faire sans non ?
+}                                       // De plus, je ne comprends pas, ici, la pertinence de pouvoir avoir la possibilité "d'initialiser"
+                                        // l'argument $str à null. ?
+//isRumya('toto') // false              // Concernant les erreurs et les explications que tu m'as fournies ci-dessus, j'ai compris la logique
+//isRumya('Rumyo') // false             // ou la méthodologie que je dois adopter ! J'ai géré cela de cette façon car à 42, on nous disait
+//isRumya('Rumya') // true              // qu'il fallait jamais avoir de messages d'erreur. Ainsi, quand un étudiant venait corriger un exo,
+//isRumya('toto') // false              // le but (un peu malsain) était de ne jamais avoir d'erreur (du compilateur j'imagine, j'ai pas assez
+//isRumya(); // false                   // de connaissances sur ce point pour etre plus précis), sinon on ne validait pas l'exo ou le projet.
+//isRumya(null) // false                # PS: Le but de ces commentaires est de vous apportez plus de "matière" pour mon entretien !
 
-//isRumya('toto') // false
-//isRumya('Rumyo') // false
-//isRumya('Rumya') // true
-//isRumya('toto') // false
-//isRumya() // false
-//isRumya(null) // false
+//var_dump(isRumya(null));
