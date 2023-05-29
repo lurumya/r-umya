@@ -16,6 +16,22 @@ les différentes instances entre elles (si c'est le bon mot).
 =====================================================================================
 */
 
+/**
+ * Mes remarques :
+ * analysons la phrase : "Un contact peut disposer d’un meilleur ami, un meilleur ami est un contact également"
+ * Ce que tu as fait dans le code est différent, tu m'a dit qu'un contact dispose du nom d'un meilleur ami.
+ *
+ * En objet il est possible de dire qu'un objet dispose d'un lien vers un autre objet, ainsi ce n'est plus le besfriendName qu'il faut sauvegarder, mais bien le bestFriend en lui même.
+ * Pour plus de clareté je t'invite à mettre le type des attributs dans la classe objet, par exemple :
+ *
+ * class Contact {
+
+    private string $contactName;
+    private string $bestFriendName;
+    private static int $objectNbr = 0;
+ * }
+ *
+ */
 class Contact {
 
     private $contactName;
