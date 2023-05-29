@@ -17,7 +17,7 @@ Commentaires :
 =====================================================================================
 */
 
-function getCapital($country) : string {
+function getCapital($country = '') : string {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
         echo 'Wrong number of function arguments !' . "\n";
@@ -46,5 +46,12 @@ function getCapital($country) : string {
     return $country;
 }
 
-//getCapital('');
 //getCapital('iTaLIE');
+//getCapital('Portugal');
+//getCapital(5);
+//getCapital('iTaLIE', 'str');
+//getCapital('iTaLIE', 5);
+//getCapital('');
+//getCapital();
+//getCapital([]);
+

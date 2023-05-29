@@ -21,17 +21,17 @@ J'ai utilisé 2 fonctions internes de PHP ; si j'ai le temps, je corrigerais ce 
 =====================================================================================
 */
 
-function RegisterVisitorsNumber(string $human) : null {
-    if (Errorhandling::errorArgc() === -1)
-        return null;
-    if ($human === "") {
+function RegisterVisitorsNumber(string $human = '') : void {
+    Errorhandling::errorArgc();
+    if ($human === '') {
         echo '0C0W0M' . "\n";
-        return null;
+        exit(255);
     }
+    Errorhandling::errorEmptyArg($human); 
     if (func_num_args() !== 1) {
-        echo 'Wrong parameters number !' . "\n";
-        return null;
-    }
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
+    }    
     $size = strlen($human);
     $i = 0;
     $childNbr = 0;
@@ -45,8 +45,8 @@ function RegisterVisitorsNumber(string $human) : null {
         elseif ($human[$i] === 'W')
             $womanNbr++;  
         else {
-            echo "Erreur !\nVous ne pouvez qu'utiliser les lettres majuscules C, M ou W et sans espace !\n";
-            return null;
+            echo 'Erreur !' . "\n" . 'Vous ne pouvez qu\'utiliser les lettres majuscules C, M ou W et sans espace !' . "\n";
+            exit(255);
         }
         $i++;
     }
@@ -60,21 +60,24 @@ function RegisterVisitorsNumber(string $human) : null {
         echo $item . $visitor;
     }
     echo "\n";
-    return null;
 }
 
-//RegisterVisitorsNumber("CCMWWMMMMWWMC");
-/*RegisterVisitorsNumber("");
-RegisterVisitorsNumber("W");
-RegisterVisitorsNumber("C");
-RegisterVisitorsNumber("M");
-RegisterVisitorsNumber("cM"); 
-RegisterVisitorsNumber("MWC");
-RegisterVisitorsNumber("MW");
-RegisterVisitorsNumber("WC");
-RegisterVisitorsNumber("MW");
-RegisterVisitorsNumber("MWCCC");
-RegisterVisitorsNumber("WMMMC");
-//var_dump(RegisterVisitorsNumber("CWWMMMM"));
-//var_dump(RegisterVisitorsNumber("MMMCMMWWMM")); // 3C 2M 4W
-//var_dump(RegisterVisitorsNumber(""));*/
+//RegisterVisitorsNumber('CCMWWMMMMWWMC');
+//RegisterVisitorsNumber('CCMWWMMMMWWMC', 'MWCCC');
+//RegisterVisitorsNumber('CCMWWMMMMWWMC', 5);
+//RegisterVisitorsNumber();
+//RegisterVisitorsNumber('');
+//RegisterVisitorsNumber(5);
+//RegisterVisitorsNumber('W');
+//RegisterVisitorsNumber('C');
+//RegisterVisitorsNumber('M');
+//RegisterVisitorsNumber('cM'); 
+//RegisterVisitorsNumber('MWC');
+//RegisterVisitorsNumber('MW');
+//RegisterVisitorsNumber('WC');
+//RegisterVisitorsNumber('MW');
+//RegisterVisitorsNumber('MWCCC');
+//RegisterVisitorsNumber('WMMMC');
+//var_dump(RegisterVisitorsNumber('CWWMMMM'));
+//var_dump(RegisterVisitorsNumber('MMMCMMWWMM')); // 3C 2M 4W
+//var_dump(RegisterVisitorsNumber(''));

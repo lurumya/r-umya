@@ -15,7 +15,7 @@ Commentaires :
 =====================================================================================
 */
 
-function getBiggerArrayValue($array) : int {
+function getBiggerArrayValue($array = []) : int {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
         echo 'Wrong number of function arguments !' . "\n";
@@ -49,6 +49,16 @@ function getBiggerArrayValue($array) : int {
     }
     return $arrayTmp[$size - 1];
 }
+
+//getBiggerArrayValue([45,-65,5,555,2,102,8,3]);
+//getBiggerArrayValue([]);
+//getBiggerArrayValue('');
+//getBiggerArrayValue([45,-65,5,555,2,102,8,3], [4,5,6]);
+//getBiggerArrayValue([45,-65,5,555,2,102,8,3], 6);
+//getBiggerArrayValue();
+//getBiggerArrayValue(5);
+//getBiggerArrayValue([45,-65,5,555,'str',102,8,3]);
+//getBiggerArrayValue('str');
 
 //echo getBiggerArrayValue([45,-65,5,555,2,102,8,3]) . "\n";
 //getBiggerArrayValue([45,-65,"str",555,2,102,8,3]);

@@ -1,7 +1,5 @@
 <?php
 require_once('../POO/Errorhandling.php');
-require_once('../Utils/ft_arraySize.php');
-
 /*
 =====================================================================================
 Page | numéro de l'exercice : p.10 | exo 25
@@ -17,31 +15,38 @@ Commentaires :
 =====================================================================================
 */
 
-function arrayReverseValue(array $tab) : ?array {
-    if (Errorhandling::errorArgc() === -1)
-        return null;
+function arraySize($tab) : int {
+    $i = 0;
+    foreach ($tab as $item)
+        $i++; 
+    return $i;
+}
+
+function arrayReverseValue($tab = []) : array {
+    Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
-        echo 'Wrong parameters number !' . "\n";
-        return null;
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
     }
-    foreach($tab as $item) {
-        if (is_int($item) === false) {
-            echo 'There is a value that isn\'t a integer !' . "\n";
-            return null;
-        }       
-    }
+    Errorhandling::errorEmptyArg($tab);
+    Errorhandling::errorTypeArgTabInt($tab);
     $size = arraySize($tab) - 1;
     $i = 0;
     $arrayTmp = array();
     while ($size >= 0) {
-        $arrayTmp[$i] = $tab[$size];
+        $tab[$i] = $tab[$size];
         $size--;
         $i++;
     }
     return $arrayTmp;
 }
 
-//arrayReverseValue([1,4,8,5]);
+//arrayReverseValue([1,4,8,5], [4,56,43]);
+//arrayReverseValue([]);
+//arrayReverseValue();
+//arrayReverseValue(3);
+//arrayReverseValue('str');
 //arrayReverseValue([10,50,34,54,7]);
-//var_dump(arrayReverseValue([10,50,"string",54,7]));
+//arrayReverseValue([10,50,'str',54,7]);
+//var_dump(arrayReverseValue([10,50,'string',54,7]));
 //var_dump(arrayReverseValue([12,50,34,3,54,7]));

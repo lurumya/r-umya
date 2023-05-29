@@ -18,14 +18,15 @@ class Errorhandling {
     public $i;
     public $argNbr;
 
-    public static function errorArgc() : int {
+    public static function errorArgc() : void {
         global $argc;
         if ($argc !== 1) {
             echo 'Wrong number of file arguments !' . "\n";
             exit (255);
         }
-        return 0;
     }
+
+//======================================================================================
 
     // Je comprends pas comment faire ça... Le problème que je crois voir
     // et que $i s'applique sur la méthode errorParamNbr et non sur la 
@@ -41,40 +42,70 @@ class Errorhandling {
         return 0;
     }
 
+//======================================================================================
 
-    public static function errorTypeArgInt($arg1, $arg2) : int {
+
+    public static function errorEmptyArg($arg) : void {
+        if ($arg === '' || $arg === []) {
+            echo 'Empty parameters !' . "\n";
+            exit(255);
+        }
+    }
+
+    public static function errorEmptyTwoArg($arg1, $arg2) : void {
+        if (($arg1 === '' || $arg1 === []) ||  ($arg2 === '' || $arg2 === [])) {
+            echo 'Empty parameters !' . "\n";
+            exit(255);
+        }
+    }
+
+//======================================================================================
+
+    public static function errorTypeOneArgInt($arg) : void {
+        if (is_int($arg) === false) {
+            echo 'Type not respected in function parameters !' . "\n";
+            exit(255);
+        }
+    }
+
+    public static function errorTypeArgInt($arg1, $arg2) : void {
         if (is_int($arg1) === false || is_int($arg2) === false) {
             echo 'Type not respected in function parameters !' . "\n";
             exit(255);
         }
-        return 0;
     }
 
-    public static function errorTypeArgStr($arg) : int {
+    public static function errorTypeArgStr($arg) : void {
         if (is_string($arg) === false) {
             echo 'Type not respected in function parameters !' . "\n";
             exit(255);
         }
-        return 0;
     }
 
-    public static function errorTypeArgTabInt($array) : int {
-        
+    public static function errorTypeArgTabInt($array = []) : void {
+        if (is_array($array) === false) {
+            echo 'Type not respected in function parameters !' . "\n";
+            exit(255);
+        }
         foreach ($array as $item) {
             if (is_int($item) === false) {
                 echo 'Type not respected in function parameters !' . "\n";
                 exit(255);
             }
         }
-        return 0;
     }
 
-    public static function errorEmptyArg($arg) : int {
-        if ($arg === '' || $arg === []) {
-            echo 'Empty parameters !' . "\n";
+    public static function errorTypeArgTabStr($array = []) : void {
+        if (is_array($array) === false) {
+            echo 'Type not respected in function parameters !' . "\n";
             exit(255);
         }
-        return 0;
+        foreach ($array as $item) {
+            if (is_string($item) === false) {
+                echo 'Type not respected in function parameters !' . "\n";
+                exit(255);
+            }
+        }
     }
 }
 

@@ -15,7 +15,7 @@ Commentaires :
 =====================================================================================
 */
 
-function strFirstCharUp($str) : string {
+function strFirstCharUp($str = 0) : string {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
         echo 'Wrong number of function arguments !' . "\n";
@@ -26,6 +26,12 @@ function strFirstCharUp($str) : string {
     return ucfirst($str[0]);
 }
 
+//strFirstCharUp('abc');
+//strFirstCharUp('abc', 5);
+//strFirstCharUp(5);
+//strFirstCharUp();
+//strFirstCharUp('');
+//strFirstCharUp([]);
 
 //echo strFirstCharUp('abc') . "\n";
 //echo strFirstCharUp('') . "\n";

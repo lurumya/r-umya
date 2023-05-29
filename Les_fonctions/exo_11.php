@@ -15,7 +15,7 @@ Commentaires :
 =====================================================================================
 */
 
-function divideArgs($arg1, $arg2) : int {
+function divideArgs($arg1 = 0, $arg2 = 0) : int {
     Errorhandling::errorArgc();
     //Errorhandling::errorParamNbr(2);
     if (func_num_args() !== 2) {
@@ -27,7 +27,9 @@ function divideArgs($arg1, $arg2) : int {
 }
 
 
-// ne fonctionne pas avec un seul argument ou aucun
 //divideArgs(20);
+//divideArgs('str');
 //divideArgs();
+//divideArgs(20, 'str');
+//divideArgs('');
 //divideArgs(20, 4);

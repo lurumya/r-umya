@@ -15,7 +15,7 @@ Commentaires :
 =====================================================================================
 */
 
-function strIsRumya($str) : bool {
+function strIsRumya($str = '') : bool {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
         echo 'Wrong number of function arguments !' . "\n";
@@ -27,6 +27,15 @@ function strIsRumya($str) : bool {
         return true;
     return false;
 }
+
+//strIsRumya('RuMya');
+//strIsRumya('');
+//strIsRumya(5);
+//strIsRumya();
+//strIsRumya('asdf');
+//strIsRumya('RuMya', 6);
+//strIsRumya('RuMya', 'str');
+//strIsRumya([]);
 
 //var_dump(strIsRumya('RuMya'));
 //var_dump(strIsRumya(''));

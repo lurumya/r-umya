@@ -30,7 +30,7 @@ vous utilisez également cette fonction (ou implode, je ne me rappelle plus). Vo
 =====================================================================================
 */
 
-function ft_strToArray($str) : array {
+function ft_strToArray($str = 0) : array {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
         echo 'Wrong number of function arguments !' . "\n";
@@ -41,6 +41,15 @@ function ft_strToArray($str) : array {
     return explode(' ', $str);
 }
 
+//ft_strToArray('Salut comment tu vas ?');
+//ft_strToArray('');
+//ft_strToArray();
+//ft_strToArray(5);
+//ft_strToArray('Salut comment tu vas ?', 5);
+//ft_strToArray('Salut comment tu vas ?', 'str');
+//ft_strToArray([]);
+
+//ft_strToArray('Salut comment tu vas ?');
 //var_dump(ft_strToArray('Salut comment tu vas ?'));
 //ft_strToArray('Salut comment tu vas ?');
 //ft_strToArray('');

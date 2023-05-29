@@ -17,7 +17,7 @@ vous utilisez également cette fonction (ou explode, je ne me rappelle plus). Vo
 =====================================================================================
 */
 
-function arrayToStr($tab) : string {
+function arrayToStr($tab = []) : string {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
         echo 'Wrong number of function arguments !' . "\n";
@@ -27,6 +27,15 @@ function arrayToStr($tab) : string {
     Errorhandling::errorTypeArgTabStr($tab);
     return implode(' ', $tab);
 }
+
+//arrayToStr(['Salut', 'comment', 'tu', 'vas', '?']);
+//arrayToStr([]);
+//arrayToStr();
+//arrayToStr(['Salut', 'comment', 'tu', 'vas', '?'], 6);
+//arrayToStr(['Salut', 'comment', 'tu', 'vas', '?'], 'str');
+//arrayToStr(5);
+//arrayToStr('');
+//arrayToStr('str');
 
 //var_dump(arrayToStr(['Salut', 'comment', 'tu', 'vas', '?']));
 //arrayToStr(['Salut', 'comment', 'tu', 'vas', '?']);

@@ -15,24 +15,25 @@ Commentaires :
 =====================================================================================
 */
 
-function checkEvenNumber(int $nbr) : ?bool {
-    if (Errorhandling::errorArgc() === -1)
-        return null;
+function checkEvenNumber($nbr = 0) : ?bool {
+    Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
-        echo 'Wrong parameters number !' . "\n";
-        return null;
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
     }
-    if (is_int($nbr) === false) {
-        echo 'There is a value that isn\'t a integer !' . "\n";
-        return null;
-    }
+    Errorhandling::errorEmptyArg($nbr);
+    Errorhandling::errorTypeOneArgInt($nbr);
     if ($nbr % 2 !== 0)
         return false;
     elseif ($nbr % 2 === 0)
         return true;
-    else
-        return null;
+    return null;
 }
 
+//checkEvenNumber('str');
+//checkEvenNumber('');
+//checkEvenNumber(25, 3);
 //checkEvenNumber(25);
+//checkEvenNumber([]);
+//checkEvenNumber();
 //var_dump(checkEvenNumber(25));

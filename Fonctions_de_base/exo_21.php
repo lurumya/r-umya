@@ -15,7 +15,7 @@ Voir les commentaires ci-dessous dans la fonction
 =====================================================================================
 */
 
-function strIsRumyaTwo($str) : bool {
+function strIsRumyaTwo($str = '') : bool {
     Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
         echo 'Wrong number of function arguments !' . "\n";
@@ -36,6 +36,14 @@ function strIsRumyaTwo($str) : bool {
     return false;
 }
 
+//strIsRumyaTwo('RuMya');
+//strIsRumyaTwo('');
+//strIsRumyaTwo(5);
+//strIsRumyaTwo();
+//strIsRumyaTwo('asdf');
+//strIsRumyaTwo('RuMya', 6);
+//strIsRumyaTwo('RuMya', 'str');
+//strIsRumyaTwo([]);
 
 //var_dump(strIsRumyaTwo('ruMyaÉ'));
 //strIsRumyaTwo('ruMyaÉ');

@@ -15,19 +15,14 @@ Commentaires :
 =====================================================================================
 */
 
-function averageArrayValue(array $tab) : ?int {
-    if (Errorhandling::errorArgc() === -1)
-        return null;
+function averageArrayValue($tab = []) : int {
+    Errorhandling::errorArgc();
     if (func_num_args() !== 1) {
-    echo 'Wrong parameters number !' . "\n";
-    return null;
+        echo 'Wrong number of function arguments !' . "\n";
+        exit(255);
     }
-    foreach($tab as $item) {
-        if (is_int($item) === false) {
-            echo 'There is a value that isn\'t a integer !' . "\n";
-            return null;
-        }
-    }
+    Errorhandling::errorEmptyArg($tab);
+    Errorhandling::errorTypeArgTabInt($tab);
     $average = 0;
     $i = 0;
     foreach ($tab as $element) {
@@ -37,5 +32,10 @@ function averageArrayValue(array $tab) : ?int {
     return $average;
 }
 
-//averageArrayValue([1,50,"string",99,547,3]);
+//averageArrayValue([]);
+//averageArrayValue();
+//averageArrayValue(6);
+//averageArrayValue([1,50,'string',99,547,3]);
+//averageArrayValue([1,50,99,547,3], [654,34,2,1]);
+//averageArrayValue([1,50,99,547,3]);
 // var_dump(averageArrayValue([1,50,34,99,547,3]));

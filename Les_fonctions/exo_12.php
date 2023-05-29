@@ -15,7 +15,7 @@ Commentaires :
 =====================================================================================
 */
 
-function smallerArgs($arg1, $arg2) : int {
+function smallerArgs($arg1 = 0, $arg2 = 0) : int {
     Errorhandling::errorArgc();
     if (func_num_args() !== 2) {
         echo 'Wrong number of function arguments !' . "\n";
@@ -32,3 +32,9 @@ function smallerArgs($arg1, $arg2) : int {
 }
 
 //echo smallerArgs(52, 21) . "\n";
+//smallerArgs();
+//smallerArgs(52);
+//smallerArgs(52, 'str');
+//smallerArgs([]);
+//smallerArgs('');
+//smallerArgs(52, 21);
