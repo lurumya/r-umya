@@ -28,6 +28,7 @@ function getBiggerArrayValueEasy(?array $array = []) : int {
 // J'ai bien galéré un moment et ensuite j'ai demandé de l'aide...
 // Un peu frustrant de pas avoir pensé à ça...
 function getBiggerArrayValueHard(array $array = []): int {
+    Errorhandling::errorArgc();
     $size = count($array);
     $i = 0;
     $bigestInt = 0;
@@ -39,6 +40,7 @@ function getBiggerArrayValueHard(array $array = []): int {
     return $bigestInt;
 }
 
+//getBiggerArrayValueHard([43534563,-200,45,-65,5,555,2,102,8343]);
 //echo getBiggerArrayValueHard([43534563,-200,45,-65,5,555,2,102,8343]) . "\n";
 
 
