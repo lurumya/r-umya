@@ -24,10 +24,6 @@ Commentaires :
 
 function strIsRumya($str = '') : bool {
     Errorhandling::errorArgc();
-    if (func_num_args() !== 1) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
     // ton test pourrait être évité si tu modifies le paramètre comme suit :
     // function strIsRumya(string $str = '') : bool {
     // ainsi c'est php qui vérifiera si c'est bien un string
@@ -67,7 +63,7 @@ function strIsRumya($str = '') : bool {
 function isRumya(?string $str) : bool { // Angelo : (sauf erreur, j'ai l'impression que tu as oublié de mettre : $str = '';
     $isRumya = false;                   // sinon ça fait une erreur si tu ne mets aucun argument à la fonction
     if (strcmp($str, 'Rumya') === 0){   // (et je comprends pk)). Par contre, je ne comprends pas très bien pk
-        $isRumya = true;                // ce code est plus opti que celui de l'exo 21 - ligne 27 à 29.
+        $isRumya = true;                // ce code est plus opti que celui de l'exo 21 - ligne 25 à 27.
     }                                   // Est-ce pour une question de visibilité ?
     return $isRumya;                    // Parce que dans l'absolu tu crées une variable alors qu'on pourrait faire sans non ?
 }                                       // De plus, je ne comprends pas, ici, la pertinence de pouvoir avoir la possibilité "d'initialiser"

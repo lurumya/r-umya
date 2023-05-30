@@ -15,20 +15,14 @@ Commentaires :
 =====================================================================================
 */
 
-function strFirstCharUp($str = 0) : string {
+function strFirstCharUp(string $str = '') : string {
     Errorhandling::errorArgc();
-    if (func_num_args() !== 1) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorTypeArgStr($str);
-    Errorhandling::errorEmptyArg($str);
-    return ucfirst($str[0]);
+    return (ucfirst($str[0]));
 }
 
 //strFirstCharUp('abc');
 //strFirstCharUp('abc', 5);
-//strFirstCharUp(5);
+//echo strFirstCharUp(5);   ??
 //strFirstCharUp();
 //strFirstCharUp('');
 //strFirstCharUp([]);

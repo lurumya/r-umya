@@ -30,28 +30,22 @@ vous utilisez également cette fonction (ou implode, je ne me rappelle plus). Vo
 =====================================================================================
 */
 
-function ft_strToArray($str = 0) : array {
+function strToArray(string $str = '') : array {
     Errorhandling::errorArgc();
-    if (func_num_args() !== 1) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorTypeArgStr($str);
-    Errorhandling::errorEmptyArg($str);
     return explode(' ', $str);
 }
 
-//ft_strToArray('Salut comment tu vas ?');
-//ft_strToArray('');
-//ft_strToArray();
-//ft_strToArray(5);
-//ft_strToArray('Salut comment tu vas ?', 5);
-//ft_strToArray('Salut comment tu vas ?', 'str');
-//ft_strToArray([]);
+//strToArray('Salut comment tu vas ?');
+//strToArray('');
+//strToArray();
+//strToArray(5);
+//strToArray('Salut comment tu vas ?', 5);
+//strToArray('Salut comment tu vas ?', 'str');
+//strToArray([]);
 
-//ft_strToArray('Salut comment tu vas ?');
-//var_dump(ft_strToArray('Salut comment tu vas ?'));
-//ft_strToArray('Salut comment tu vas ?');
-//ft_strToArray('');
-//var_dump(ft_strToArray(56));
-//ft_strToArray('Salut comment tu vas ?', 'str');
+//strToArray('Salut comment tu vas ?');
+//var_dump(strToArray('Salut comment tu vas ?'));
+//strToArray('Salut comment tu vas ?');
+//strToArray('');
+//var_dump(strToArray(56));
+//strToArray('Salut comment tu vas ?', 'str');

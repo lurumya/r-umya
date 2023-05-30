@@ -15,15 +15,8 @@ Commentaires :
 =====================================================================================
 */
 
-
-function averageTabValues($array = []) : int {
+function averageTabValues(array $array = []) : int {
     Errorhandling::errorArgc();
-    if (func_num_args() !== 1) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorEmptyArg($array);
-    Errorhandling::errorTypeArgTabInt($array);
     $size = 0;
     foreach ($array as $element)
         $size++;
@@ -37,7 +30,7 @@ function averageTabValues($array = []) : int {
     return $average / $size;
 }
 
-//averageTabValues([45,-65,5,65,555,2,102,8,3]);
+//echo averageTabValues([45,-65,5,65,555,2,102,8,3]);
 //averageTabValues([]);
 //averageTabValues('');
 //averageTabValues('str');

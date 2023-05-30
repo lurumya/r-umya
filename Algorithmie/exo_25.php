@@ -15,26 +15,20 @@ Commentaires :
 =====================================================================================
 */
 
-function arraySize($tab) : int {
+function arraySize(array $tab) : int {
     $i = 0;
-    foreach ($tab as $item)
+    foreach ($tab as $item) 
         $i++; 
     return $i;
 }
 
-function arrayReverseValue($tab = []) : array {
+function arrayReverseValue(array $tab = []) : array {
     Errorhandling::errorArgc();
-    if (func_num_args() !== 1) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorEmptyArg($tab);
-    Errorhandling::errorTypeArgTabInt($tab);
     $size = arraySize($tab) - 1;
     $i = 0;
     $arrayTmp = array();
     while ($size >= 0) {
-        $tab[$i] = $tab[$size];
+        $arrayTmp[$i] = $tab[$size];
         $size--;
         $i++;
     }
@@ -49,4 +43,5 @@ function arrayReverseValue($tab = []) : array {
 //arrayReverseValue([10,50,34,54,7]);
 //arrayReverseValue([10,50,'str',54,7]);
 //var_dump(arrayReverseValue([10,50,'string',54,7]));
+//var_dump(arrayReverseValue([50,34,3,54,7]));
 //var_dump(arrayReverseValue([12,50,34,3,54,7]));

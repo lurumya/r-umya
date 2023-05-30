@@ -17,14 +17,8 @@ vous utilisez également cette fonction (ou explode, je ne me rappelle plus). Vo
 =====================================================================================
 */
 
-function arrayToStr($tab = []) : string {
+function arrayToStr(array $tab = []) : string {
     Errorhandling::errorArgc();
-    if (func_num_args() !== 1) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorEmptyArg($tab);
-    Errorhandling::errorTypeArgTabStr($tab);
     return implode(' ', $tab);
 }
 

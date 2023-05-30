@@ -17,14 +17,9 @@ Commentaires :
 =====================================================================================
 */
 
-function getCapital($country = '') : string {
+function getCapital(string $country = '') : string {
     Errorhandling::errorArgc();
-    if (func_num_args() !== 1) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorTypeArgStr($country);
-    Errorhandling::errorEmptyArg($country);
+    //Errorhandling::errorTypeArgStr($country);
     $country = strtolower($country);
     switch ($country) {
         case $country === 'france':
@@ -48,10 +43,9 @@ function getCapital($country = '') : string {
 
 //getCapital('iTaLIE');
 //getCapital('Portugal');
-//getCapital(5);
+//getCapital(5);                ??
 //getCapital('iTaLIE', 'str');
 //getCapital('iTaLIE', 5);
 //getCapital('');
 //getCapital();
 //getCapital([]);
-

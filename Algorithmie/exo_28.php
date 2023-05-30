@@ -21,17 +21,8 @@ J'ai utilisé 2 fonctions internes de PHP ; si j'ai le temps, je corrigerais ce 
 =====================================================================================
 */
 
-function RegisterVisitorsNumber(string $human = '') : void {
-    Errorhandling::errorArgc();
-    if ($human === '') {
-        echo '0C0W0M' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorEmptyArg($human); 
-    if (func_num_args() !== 1) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }    
+function RegisterVisitorsNumber(string $human = '0C0W0M' . "\n") : void {
+    Errorhandling::errorArgc(); 
     $size = strlen($human);
     $i = 0;
     $childNbr = 0;

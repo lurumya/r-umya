@@ -15,21 +15,16 @@ Commentaires :
 =====================================================================================
 */
 
-function divideArgs($arg1 = 0, $arg2 = 0) : int {
+function divideArgs(int $arg1 = 0, int $arg2 = 0) : int {
     Errorhandling::errorArgc();
-    //Errorhandling::errorParamNbr(2);
-    if (func_num_args() !== 2) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorTypeArgInt($arg1, $arg2);
     return ($arg1 / $arg2);
 }
 
-
+//echo intdiv(5, 4) . "\n"; // bizarre ms logique
+//divideArgs(5, 'str');
 //divideArgs(20);
 //divideArgs('str');
 //divideArgs();
 //divideArgs(20, 'str');
 //divideArgs('');
-//divideArgs(20, 4);
+//echo divideArgs(5, 'str') . "\n";

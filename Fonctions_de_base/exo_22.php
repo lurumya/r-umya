@@ -21,7 +21,7 @@ function getBiggerArrayValueEasy(?array $array = []) : int {
 }
 //var_dump(getBiggerArrayValueEasy([45,-65,5,555,2,102,8,3]));
 
-// J'ai un honte, surtout arpès avoir dit que cet exo était facile.
+// J'ai un peu honte, surtout arpès avoir dit que cet exo était facile.
 // La première version que j'ai faite était effectivement fonctionnelle.
 // Arnaud m'a suggéré de sauvegarder la valeur dans une variable uniquement 
 // si elle est supérieure au maximum que tu as déjà trouvé".

@@ -15,18 +15,12 @@ Commentaires :
 =====================================================================================
 */
 
-function getAreaTriangle($base = 0, $height = 0) : float {
+function getAreaTriangle(int $base = 0, int $height = 0) : float {
     Errorhandling::errorArgc();
-    if (func_num_args() !== 2) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorEmptyTwoArg($base, $height);
-    Errorhandling::errorTypeArgInt($base, $height);
     return (($base * $height) / 2);
 }
 
-//getAreaTriangle(5, 3);
+//echo getAreaTriangle(5, 3);
 //getAreaTriangle(5, 3, 5);
 //getAreaTriangle(5);
 //getAreaTriangle('str');

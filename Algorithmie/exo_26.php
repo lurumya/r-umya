@@ -15,14 +15,8 @@ Commentaires :
 =====================================================================================
 */
 
-function checkEvenNumber($nbr = 0) : ?bool {
+function checkEvenNumber(int $nbr = 0) : ?bool {
     Errorhandling::errorArgc();
-    if (func_num_args() !== 1) {
-        echo 'Wrong number of function arguments !' . "\n";
-        exit(255);
-    }
-    Errorhandling::errorEmptyArg($nbr);
-    Errorhandling::errorTypeOneArgInt($nbr);
     if ($nbr % 2 !== 0)
         return false;
     elseif ($nbr % 2 === 0)

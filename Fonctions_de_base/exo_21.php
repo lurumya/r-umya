@@ -14,7 +14,7 @@ Commentaires :
 Voir les commentaires ci-dessous dans la fonction 
 =====================================================================================
 */
-
+// pk ?string ?
 function strIsRumyaTwo(?string $str = '') : bool {
     Errorhandling::errorArgc();
 	$search  = array('À','Á','Â','Ã','Ä','Å','Ç','È','É','Ê','Ë','Ì','Í','Î','Ï','Ò','Ó','Ô','Õ','Ö','Ù','Ú','Û','Ü','Ý','à','á','â','ã','ä','å','ç','è','é','ê','ë','ì','í','î','ï','ð','ò','ó','ô','õ','ö','ù','ú','û','ü','ý','ÿ');
@@ -39,7 +39,7 @@ function strIsRumyaTwo(?string $str = '') : bool {
 //strIsRumyaTwo('RuMya', 'str');
 //strIsRumyaTwo([]);
 
-//var_dump(strIsRumyaTwo('ruMyaÉ'));
+//var_dump(strIsRumyaTwo('ruMyA'));
 //strIsRumyaTwo('ruMyaÉ');
 //var_dump(strIsRumyaTwo(''));
 //var_dump(strIsRumyaTwo('RuMya', 'str'));
